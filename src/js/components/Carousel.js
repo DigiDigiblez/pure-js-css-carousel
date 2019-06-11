@@ -1,5 +1,4 @@
 const carouselData = require('../carousel-data');
-import { TweenMax } from "gsap/TweenMax";
 
 export class Carousel {
     constructor(slideData) {
@@ -23,11 +22,6 @@ export class Carousel {
                 </section>
             </div>
         `;
-
-/*
-        TweenMax.to(".widget-slide", 1, {css: {x: "-1500"}, delay: 0});
-*/
-
     }
 
 
@@ -54,15 +48,15 @@ export class Carousel {
             let isChecked = i === 0 ? 'checked' : 'unchecked';
 
             // Build a new dot per slide record in the JSON data.
-            dots += `<input type="radio" class="widget-nav-dot" name="nav-slider" title="nav-slider" id="nav-slide-1" onclick=navigateSlider(0) ${isChecked}/>`;
+            dots += `<input type="radio" class="carousel-nav-dot" name="nav-slider" title="nav-slider" id="nav-slide-1" onclick=navigateSlider(0) ${isChecked}/>`;
         }
 
         // Return a navigation panel containing a number of dots equating the number of slides.
         return `
-            <div id="widget-nav">
-                <span id="navigatePrev" class="fa fa-angle-left widget-left" onclick=navigateSlider(-1)></span>
+            <div id="carousel-nav">
+                <span id="navigatePrev" class="fa fa-angle-left carousel-left" onclick=navigateSlider(-1)></span>
                     ${dots}
-                <span id="navigateNext" class="fa fa-angle-right widget-right" onclick=navigateSlider(1)></span>
+                <span id="navigateNext" class="fa fa-angle-right carousel-right" onclick=navigateSlider(1)></span>
             </div>
         `;
     }
@@ -74,12 +68,12 @@ export class Carousel {
         // Build a new slide per slide record in the JSON data.
         for(let slide of slideData.slides) {
             slides +=
-                `<div class="widget-slide">
-                    <span class="widget-slide-img fa ${slide.icon} fa-fw"></span>
+                `<div class="carousel-slide">
+                    <span class="carousel-slide-img fa ${slide.icon} fa-fw"></span>
                     <hr class="vhr" width="1" size="210">
-                    <div class="widget-slide-text">
-                        <h2 class="widget-slide-title">${slide.title}</h2>
-                        <p class="widget-slide-desc">${slide.description}</p>
+                    <div class="carousel-slide-text">
+                        <h2 class="carousel-slide-title">${slide.title}</h2>
+                        <p class="carousel-slide-desc">${slide.description}</p>
                     </div>
                 </div>
             `;
@@ -87,7 +81,7 @@ export class Carousel {
 
         // Return a slide set containing the required number of slides.
         return `
-            <div id="widget-slides">
+            <div id="carousel-slides">
                 ${slides}
             </div>
         `;

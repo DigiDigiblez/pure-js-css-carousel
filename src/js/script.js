@@ -1,6 +1,6 @@
 function navigateSlider(direction) {
     const navDots = document.getElementsByName("nav-slider");
-    const navSlides = document.getElementsByClassName("widget-slide");
+    const navSlides = document.getElementsByClassName("carousel-slide");
     let navDotPos;
 
     for(let i = 0; i < navDots.length; i++) {
@@ -16,10 +16,6 @@ function navigateSlider(direction) {
             }
 
             else if((i === 0) && (direction === 1)) {
-                /*
-                 TweenMax.to(".widget-slide", 1, {css: {x: "-1500"}, delay: 0});
-                 */
-
                 navDots[direction].checked = true;
                 navDotPos = direction;
             }

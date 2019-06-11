@@ -25,6 +25,7 @@ body {
     height: 30px;
     float: left;
     display: inline;
+    cursor: pointer;
 }
 
 #header-title {
@@ -52,7 +53,7 @@ body {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-/* ~~~ CAROUSEL WIDGET ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~ CAROUSEL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 #carousel-section {
@@ -78,13 +79,15 @@ body {
     border-radius: 0.3em 0.3em 0 0;
 }
 
-#widget-nav {
+#carousel-nav {
     background: #F5F5F5;
     text-align: center;
     padding: 20px;
 }
 
-#widget-nav * {
+.fa-angle-left,
+.fa-angle-right,
+.fa-bars {
     cursor: pointer;
 }
 
@@ -94,15 +97,15 @@ body {
     font-size: 20pt;
 }
 
-.widget-left {
+.carousel-left {
     float: left;
 }
 
-.widget-right {
+.carousel-right {
     float: right;
 }
 
-.widget-nav-dot {
+.carousel-nav-dot {
     margin: 5px;
 }
 
@@ -123,7 +126,7 @@ input[type='radio']:checked:after {
     background-color: #F68024;
 }
 
-.widget-slide-img {
+.carousel-slide-img {
     color: #F68024;
     margin: 70px 20px 70px 120px;
     font-size: 200px;
@@ -132,24 +135,24 @@ input[type='radio']:checked:after {
     box-shadow: 0px 27px 23px -18px rgba(0, 0, 0, 0.77);
 }
 
-.widget-slide-text {
+.carousel-slide-text {
     padding-left: 40px;
     display: inline-block;
 }
 
-.widget-slide-title {
+.carousel-slide-title {
     font-size: 22pt;
     margin-bottom: 10px;
 }
 
-.widget-slide-desc {
+.carousel-slide-desc {
     font-size: 16pt;
     word-wrap: break-word;
     max-width: 70ch;
 }
 
 /* Hide all subsequent slides after the first (general sibling combinator). */
-div.widget-slide ~ .widget-slide {
+div.carousel-slide ~ .carousel-slide {
     display: none;
 }
 
@@ -161,20 +164,20 @@ div.widget-slide ~ .widget-slide {
 }
 
 @media only screen and (max-width: 1570px) {
-    .widget-slide-desc {
+    .carousel-slide-desc {
         max-width: 50ch;
     }
 }
 
 @media only screen and (max-width: 1250px) {
-    .widget-slide-desc {
+    .carousel-slide-desc {
         max-width: 30ch;
     }
 }
 
 /* Small devices, e.g. mobile phones */
 @media only screen and (max-width: 600px) {
-    .widget-slide-img {
+    .carousel-slide-img {
         margin: 15px 30px 30px 30px;
         font-size: 100px;
         -webkit-box-shadow: 0px 27px 23px -18px rgba(0, 0, 0, 0.77);
@@ -182,11 +185,11 @@ div.widget-slide ~ .widget-slide {
         box-shadow: 0px 27px 23px -18px rgba(0, 0, 0, 0.77);
     }
 
-    .widget-slide {
+    .carousel-slide {
         text-align: center;
     }
 
-    .widget-slide-text {
+    .carousel-slide-text {
         padding-right: 40px;
     }
 
@@ -194,12 +197,12 @@ div.widget-slide ~ .widget-slide {
         display: none;
     }
 
-    .widget-slide-title {
+    .carousel-slide-title {
         font-size: 14pt;
         margin-bottom: 10px;
     }
 
-    .widget-slide-desc {
+    .carousel-slide-desc {
         font-size: 11pt;
         word-wrap: break-word;
         max-width: 40ch;
