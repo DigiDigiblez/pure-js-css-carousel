@@ -41,6 +41,7 @@ function navigateSlider(direction) {
 }
 
 function animateSlide(navDots, navSlides, navDotPos, direction) {
+
     for(let slide of navSlides) {
         if(direction === 1 || direction === 0) {
             TweenMax.fromTo([slide, slide], 1, {x: 0}, {x: 2000}).totalDuration(0.25);

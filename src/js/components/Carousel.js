@@ -5,7 +5,6 @@ export class Carousel {
         this.initialiseCarousel(slideData);
     }
 
-
     initialiseCarousel(slideData) {
         document.getElementById('carousel-root').innerHTML = `
             <div id="wrapper">
@@ -24,7 +23,6 @@ export class Carousel {
         `;
     }
 
-
     initialiseHeader() {
         return `
             <header id="header">
@@ -38,7 +36,6 @@ export class Carousel {
             </header>
         `;
     }
-
 
     initialiseDots(slideData) {
         let dots = '';
@@ -60,7 +57,6 @@ export class Carousel {
             </div>
         `;
     }
-
 
     initialiseSlides(slideData) {
         let slides = '';
